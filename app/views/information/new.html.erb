@@ -1,0 +1,9 @@
+<h1>New information</h1>
+
+<%= form_tag(url_for_options = {action: :create, controller: :information}, options = {:multipart => true}) do %>
+	<strong><%= label_tag :file, 'Upload your file:' %></strong>
+  <%= file_field_tag :file %><br><br>
+  <%= submit_tag 'Send' %>
+<% end %>
+
+<%= link_to 'Back', informations_path %>
