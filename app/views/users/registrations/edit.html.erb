@@ -1,3 +1,13 @@
+<% content_for :breadcrumb do %>
+<div class="row">
+  <div class="span12">
+    <ul class="breadcrumb">
+      <li><%= link_to "Dashboard", information_index_path %> <span class="divider">/</span></li>
+      <li><%= link_to "Editar conta", new_information_path, class: 'active' %> <span class="divider">/</span></li>
+    </ul>
+  </div>
+</div>
+<% end -%>
 <h2>Editar Conta</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
