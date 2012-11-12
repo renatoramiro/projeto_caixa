@@ -1,75 +1,131 @@
-<p id="notice"><%= notice %></p>
+<% content_for :breadcrumb do %>
+<div class="row">
+  <div class="span12">
+    <ul class="breadcrumb">
+      <li><%= link_to "Dashboard", information_index_path %> <span class="divider">/</span></li>
+      <li><%= link_to "Exibir informação", @information, class: 'active' %> <span class="divider">/</span></li>
+    </ul>
+  </div>
+</div>
+<% end %>
+<div class="row">
+  <div class="span3">
+    <h4>Informação</h4>
+  </div>
+  <div class="offset2 span3">
+    <p class="muted pull-right"><small>Criada em <%= @information.created_at.strftime('%d/%m/%Y') %></small></p>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="span5">
+    <p>
+      <b>Empresa:</b>
+      <%= @information.empresa %>
+    </p>
+  </div>
+  <div class="span3">
+    <p>
+      <b>CGC:</b>
+      <%= @information.cgc %>
+    </p>
+  </div>
+</div>
 
-<p>
-  <b>Empresa:</b>
-  <%= @information.empresa %>
-</p>
+<div class="row">
+  <div class="span5">
+    <p>
+      <b>Município:</b>
+      <%= @information.municipio %>
+    </p>
+  </div>
+  <div class="span3">
+    <p>
+      <b>UF:</b>
+      <%= @information.estado %>
+    </p>
+  </div>
+</div>
 
-<p>
-  <b>CGC:</b>
-  <%= @information.cgc %>
-</p>
+<div class="row">
+  <div class="span5">
+    <p>
+      <b>Telefone:</b>
+      <%= @information.telefone1 %> // <%= @information.telefone2 %>
+    </p>
+  </div>
+  <div class="span3">
+    <p>
+      <b>Fax:</b>
+      <%= @information.fax %>
+    </p>
+  </div>
+</div>
 
-<p>
-  <b>Email:</b>
-  <%= @information.email %>
-</p>
+<div class="row">
+  <div class="span5">
+    <p>
+      <b>Email:</b>
+      <%= @information.email %>
+    </p>
+  </div>
+</div>
 
-<p>
-  <b>Municipio:</b>
-  <%= @information.municipio %>
-</p>
+<div class="row">
+  <div class="span5">
+    <p>
+      <b>A/C:</b>
+      <%= @information.ac %>
+    </p>
+  </div>
+</div>
+<hr>
 
-<p>
-  <b>Estado:</b>
-  <%= @information.estado %>
-</p>
+<div class="row">
+  <div class="span5">
+    <p>
+      <b>Assunto:</b>
+      <%= @information.assunto %>
+    </p>
+  </div>
+</div>
 
-<p>
-  <b>Telefone1:</b>
-  <%= @information.telefone1 %>
-</p>
+<div class="row">
+  <div class="span5">
+    <p>
+      <b>Atividade:</b>
+      <%= @information.atividade %>
+    </p>
+  </div>
+</div>
 
-<p>
-  <b>Telefone2:</b>
-  <%= @information.telefone2 %>
-</p>
+<div class="row">
+  <div class="span5">
+    <p>
+      <b>Produto:</b>
+      <%= @information.produto %>
+    </p>
+  </div>
+</div>
 
-<p>
-  <b>Fax:</b>
-  <%= @information.fax %>
-</p>
+<div class="row">
+  <div class="span5">
+    <p>
+      <b>Linha:</b>
+      <%= @information.linha %>
+    </p>
+  </div>
+</div>
 
-<p>
-  <b>A/C:</b>
-  <%= @information.ac %>
-</p>
+<div class="row">
+  <div class="span5">
+    <p>
+      <b>Fonte:</b>
+      <%= @information.fonte %>
+    </p>
+  </div>
+</div>
 
-<p>
-  <b>Assunto:</b>
-  <%= @information.assunto %>
-</p>
-
-<p>
-  <b>Atividade:</b>
-  <%= @information.atividade %>
-</p>
-
-<p>
-  <b>Produto:</b>
-  <%= @information.produto %>
-</p>
-
-<p>
-  <b>Linha:</b>
-  <%= @information.linha %>
-</p>
-
-<p>
-  <b>Fonte:</b>
-  <%= @information.fonte %>
-</p>
-
-
-<%= link_to 'Edit', edit_information_path(@information) %> |
-<%= link_to 'Back', information_index_path %>
+<hr>
+<%= link_to 'Editar', edit_information_path(@information) %> |
+<%= link_to 'Voltar', information_index_path %>

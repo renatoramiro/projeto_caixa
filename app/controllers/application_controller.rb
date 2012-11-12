@@ -57,4 +57,15 @@ class ApplicationController < ActionController::Base
 
   	info
   end
+
+private
+
+  # Overwriting the sign_in redirect path method
+  def after_sign_in_path_for(resource_or_scope)
+    information_index_path
+  end
+
+  def after_sign_up_path_for(resource_or_scope)
+    information_index_path
+  end
 end

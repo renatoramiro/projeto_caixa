@@ -1,0 +1,16 @@
+<%= form_for(resource, :as => resource_name, :html => { :class => 'form-signin'}, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <h2 class="form-signin-heading">Criar Conta</h2>
+  <%= f.email_field :email, class: 'input-block-level', placeholder: 'Endereço de Email' %>
+
+  <%= f.password_field :password, class: 'input-block-level', placeholder: 'Senha' %>
+
+  <%= f.password_field :password_confirmation, class: 'input-block-level', placeholder: 'Confirmação da senha' %>
+
+  <label class="checkbox">
+  	<input type="checkbox" value="ok"> Li e concordo com os <a href="#">Termos de Uso</a>
+	</label>
+
+  <%= f.submit "Criar conta", class: 'btn btn-large btn-primary' %>
+<% end %>

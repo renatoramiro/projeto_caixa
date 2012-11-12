@@ -10,60 +10,118 @@
       </ul>
     </div>
   <% end %>
+  <div class="row">
+    <div class="span5">
+      <p>
+        <b><%= f.label :empresa %></b>
+        <%= f.text_field :empresa, class: 'span4' %>
+      </p>
+    </div>
+    <div class="span3">
+      <p>
+        <b><%= f.label :cgc, "CGC" %></b>
+        <%= f.text_field :cgc %>
+      </p>
+    </div>
 
-  <div class="field">
-    <%= f.label :empresa %><br />
-    <%= f.text_field :empresa %>
+    <div class="span5">
+      <p>
+        <b><%= f.label :municipio %></b>
+        <%= f.text_field :municipio %>
+      </p>
+    </div>
+    <div class="span3">
+      <p>
+        <b><%= f.label :estado %></b>
+        <%= f.text_field :estado %>
+      </p>
+    </div>
+
+    <div class="span5">
+      <p>
+        <b><%= f.label :municipio %></b>
+        <%= f.text_field :municipio %>
+      </p>
+    </div>
+    <div class="span3">
+      <p>
+        <b><%= f.label :estado %></b>
+        <%= f.text_field :estado %>
+      </p>
+    </div>
+
+    <div class="span2">
+      <p>
+        <b><%= f.label :telefone1 %></b>
+        <%= f.text_field :telefone1, class: 'span2' %>
+      </p>
+    </div>
+    <div class="span2">
+      <p>
+        <b><%= f.label :telefone2 %></b>
+        <%= f.text_field :telefone2, class: 'span2' %>
+      </p>
+    </div>
+    <div class="span2">
+      <p>
+        <b><%= f.label :fax %></b>
+        <%= f.text_field :fax, class: 'span2' %>
+      </p>
+    </div>
+
+    <div class="span5">
+      <p>
+        <b><%= f.label :email %></b>
+        <%= f.email_field :email, class: 'span4' %>
+      </p>
+    </div>
+
+    <div class="span5">
+      <p>
+        <b><%= f.label :ac %></b>
+        <%= f.text_field :ac, class: 'span4' %>
+      </p>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :cgc %><br />
-    <%= f.text_field :cgc %>
+  <hr>
+  <div class="row">
+    <div class="span5">
+      <p>
+        <b><%= f.label :assunto %></b>
+        <%= f.text_field :assunto, class: 'span4' %>
+      </p>
+    </div>
+
+    <div class="span5">
+      <p>
+        <b><%= f.label :atividade %></b>
+        <%= f.text_field :atividade, class: 'span4' %>
+      </p>
+    </div>
+
+    <div class="span5">
+      <p>
+        <b><%= f.label :produto %></b>
+        <%= f.text_field :produto, class: 'span4' %>
+      </p>
+    </div>
+
+    <div class="span5">
+      <p>
+        <b><%= f.label :linha %></b>
+        <%= f.text_field :linha, class: 'span4' %>
+      </p>
+    </div>
+
+    <div class="span5">
+      <p>
+        <b><%= f.label :fonte %></b>
+        <%= f.text_field :fonte, class: 'span4' %>
+      </p>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :municipio %><br />
-    <%= f.text_field :municipio %>
-  </div>
-  <div class="field">
-    <%= f.label :estado %><br />
-    <%= f.text_field :estado %>
-  </div>
-  <div class="field">
-    <%= f.label :telefone1 %><br />
-    <%= f.text_field :telefone1 %>
-  </div>
-  <div class="field">
-    <%= f.label :telefone2 %><br />
-    <%= f.text_field :telefone2 %>
-  </div>
-  <div class="field">
-    <%= f.label :fax %><br />
-    <%= f.text_field :fax %>
-  </div>
-  <div class="field">
-    <%= f.label :ac %><br />
-    <%= f.text_field :ac %>
-  </div>
-  <div class="field">
-    <%= f.label :assunto %><br />
-    <%= f.text_field :assunto %>
-  </div>
-  <div class="field">
-    <%= f.label :atividade %><br />
-    <%= f.text_field :atividade %>
-  </div>
-  <div class="field">
-    <%= f.label :produto %><br />
-    <%= f.text_field :produto %>
-  </div>
-  <div class="field">
-    <%= f.label :linha %><br />
-    <%= f.text_field :linha %>
-  </div>
-  <div class="field">
-    <%= f.label :fonte %><br />
-    <%= f.text_field :fonte %>
-  </div>
+  <hr>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Atualizar", class: 'btn' %>
   </div>
 <% end %>

@@ -1,6 +1,16 @@
-<h1>Editing information</h1>
+<% content_for :breadcrumb do %>
+<div class="row">
+  <div class="span12">
+    <ul class="breadcrumb">
+      <li><%= link_to "Dashboard", information_index_path %> <span class="divider">/</span></li>
+      <li><%= link_to "Editando informação", edit_information_path(@information), class: 'active' %> <span class="divider">/</span></li>
+    </ul>
+  </div>
+</div>
+<% end %>
+<h1>Editando informação</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @information %> |
-<%= link_to 'Back', information_index_path %>
+<%= link_to 'Mostrar', @information %> |
+<%= link_to 'Voltar', information_index_path %>

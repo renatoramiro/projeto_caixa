@@ -1,29 +1,38 @@
-<h1>Listing my informations</h1>
-
-<table>
-  <tr>
-    <th>Empresa</th>
-    <th>CGC</th>
-    <th>Assunto</th>
-    <th>Atividade</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @information.each do |information| %>
-  <tr>
-    <td><%= information.empresa %></td>
-    <td><%= information.cgc %></td>
-    <td><%= information.assunto %></td>
-    <td><%= information.atividade %></td>
-    <td><%= link_to 'Show', information %></td>
-    <td><%= link_to 'Edit', edit_information_path(information) %></td>
-    <td><%= link_to 'Destroy', information, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<% content_for :breadcrumb do %>
+<div class="row">
+  <div class="span12">
+    <ul class="breadcrumb">
+      <li><a class="active" href="dashboard.html">Dashboard</a> <span class="divider">/</span></li>
+    </ul>
+  </div>
+</div>
 <% end %>
+<h2>Lista de Informações</h2>
+<%= link_to "Adicionar nova informação", new_information_path, class: 'large-link-green' %>
+<hr>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Empresa</th>
+      <th>Email</th>
+      <th>Criada em</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @informations.each do |info| %>
+    <tr>
+      <td><%= info.empresa %></td>
+      <td><%= info.email %></td>
+      <td><%= info.created_at.strftime("%d/%m/%Y") %></td>
+      <td><%= link_to "Mostrar", info %></td>
+      <td><%= link_to "Editar", edit_information_path(info), class: 'text-success' %></td>
+      <td><%= link_to 'Excluir', info, method: :delete, data: { confirm: 'Você tem certeza?' }, class: 'text-error' %></td>
+    </tr>
+    <% end -%>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Information', new_information_path %>
+<%= will_paginate(@informations, :class => "pagination pagination-centered", :previous_label => "&larr; Anterior", :next_label => "Próximo &rarr;") %>

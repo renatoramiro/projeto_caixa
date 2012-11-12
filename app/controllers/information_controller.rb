@@ -1,8 +1,11 @@
 class InformationController < ApplicationController
+  before_filter :authenticate_user!
+  layout 'dashboard'
+  load_and_authorize_resource
   # GET /information
   # GET /information.json
   def index
-    @information = Information.all
+    @informations = current_user.informations.paginate(:page => params[:page], :per_page => 3).order('created_at desc')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,7 +27,7 @@ class InformationController < ApplicationController
   # GET /information/new
   # GET /information/new.json
   def new
-    @information = Information.new
+    @information = current_user.informations.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +44,7 @@ class InformationController < ApplicationController
   # POST /information.json
   def create
     @information = get_file(params[:file])
+    @information.user = current_user
 
     respond_to do |format|
       if @information.save
